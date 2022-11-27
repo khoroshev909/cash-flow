@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
 
-export const Navbar = () => {
+export const Navbar = React.memo(() => {
+
     return (
         <div className="navbar">
             <div className="logo">
@@ -14,4 +15,5 @@ export const Navbar = () => {
             </div>
         </div>
     );
-};
+});
+

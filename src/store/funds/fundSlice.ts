@@ -1,19 +1,17 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {IFund} from "../../types";
+import {IFund} from "./types";
 
-/// <reference path="../../types/index.ts" />
+/// <reference path="./types.ts" />
 
 interface InitialProps {
     loading: boolean,
     funds: IFund[],
-    current: IFund | null,
     error: null | string
 }
 
 const initialState: InitialProps = {
     loading: true,
     funds: [],
-    current: null,
     error: null
 }
 
@@ -27,18 +25,15 @@ const fundSlice = createSlice({
         fundsLoadingOff(state) {
             state.loading = false
         },
-        fundsGetError(state, action: PayloadAction<string>) {
+        fundSetError(state, action: PayloadAction<string>) {
             state.error = action.payload
         },
         fundsResetError(state) {
             state.error = null
         },
-        fundsFetchData(state, action: PayloadAction<IFund[]>) {
+        fundsSetData(state, action: PayloadAction<IFund[]>) {
             state.funds = action.payload
             state.error = null
-        },
-        fundsGetCurrent(state, action: PayloadAction<IFund>) {
-            state.current = action.payload
         }
     }
 })
@@ -47,10 +42,9 @@ const {reducer: fundReducer, actions} = fundSlice
 export const {
     fundsLoadingOn,
     fundsLoadingOff,
-    fundsGetError,
+    fundSetError,
     fundsResetError,
-    fundsFetchData,
-    fundsGetCurrent
+    fundsSetData,
 } = actions
 
 export default fundReducer
