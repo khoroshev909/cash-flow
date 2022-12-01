@@ -1,10 +1,11 @@
 import React from 'react';
+import Layout from "../layouts/Layout";
 
 export const LoginPage = React.memo(() => {
     return (
-        <div>
+        <Layout>
             <h4>Login</h4>
-        </div>
+        </Layout>
     );
 });
 

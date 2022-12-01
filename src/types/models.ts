@@ -29,10 +29,11 @@ export interface IUser {
 export interface IBill {
     createdAt: number;
     type: BILL_TYPES;
+    bank: string,
     account: string;
     balance: number;
-    reviewers: IUser[];
-    owner: IUser;
+    reviewers: string[];
+    owner: string;
     updatedAt: number;
     currency: CURRENCY_CODE;
     _id: string;
@@ -49,5 +50,10 @@ export interface IComment {
     updatedAt: number;
     _id: string;
     id: string;
+}
+
+export interface QueryError {
+    code: number,
+    data: string
 }
 

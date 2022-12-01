@@ -19,18 +19,24 @@ export interface IFund {
     id: string;
 }
 
-export interface IFundExtended {
-    createdAt: number;
-    type: FUND_TYPES;
-    bill: IBill;
-    amount: number;
-    title: string;
-    comments: IComment[];
-    reviewers: IUser[];
-    creator: IUser;
-    updatedAt: number;
-    _id: string;
-    id: string;
+export interface FundFullInfo {
+    loading: boolean,
+    fund: IFund | null,
+    error: null | string
+    creator: IUser | null,
+    reviewers: IUser[],
+    bill: IBill | null,
+    billOwner: IUser | null,
+    comments: IComment[],
+}
+
+export interface FundFullInfoResponse {
+    fund: IFund | null,
+    creator: IUser | null,
+    reviewers: IUser[],
+    bill: IBill | null,
+    billOwner: IUser | null,
+    comments: IComment[]
 }
 
 export interface FundResponse {

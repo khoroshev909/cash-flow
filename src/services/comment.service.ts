@@ -2,7 +2,7 @@ import httpService from "./http.service";
 import {IComment} from "../types/models";
 
 export const commentService = {
-    fetchById: async (commentId: string): Promise<IComment> => {
+    fetchById: async (commentId: string) => {
         try {
             const response = await httpService.get<IComment>(`/comments/${commentId}`)
             const {data} = response

@@ -1,14 +1,21 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
-import fundReducer from "./funds/fundSlice";
+import {billApi} from "../services/RTK/billApi";
+import {fundApi} from "../services/RTK/fundApi";
+import currentFundReducer from "./funds/currentFundSlice";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
+
 const rootReducer = combineReducers({
-  funds: fundReducer
+  [billApi.reducerPath]: billApi.reducer,
+  [fundApi.reducerPath]: fundApi.reducer,
+  currentFund: currentFundReducer
 })
 
 function setupStore() {
   return configureStore({
-    reducer: rootReducer
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+        .concat(billApi.middleware, fundApi.middleware)
   });
 }
 

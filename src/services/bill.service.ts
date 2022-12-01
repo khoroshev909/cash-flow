@@ -2,7 +2,7 @@ import httpService from "./http.service";
 import {IBill} from "../types/models";
 
 export const billService = {
-    fetchById: async (billId: string):Promise<IBill> => {
+    fetchById: async (billId: string) => {
         try {
             const response = await httpService.get<IBill>(`/bills/${billId}`)
             const {data} = response
