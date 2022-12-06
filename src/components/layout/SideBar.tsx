@@ -3,23 +3,18 @@ import Drawer from '@mui/material/Drawer'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Divider from '@mui/material/Divider'
-import List from '@mui/material/List'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, secondaryListItems } from './listItems';
+import {SideBarMenu} from '../../components/ui'
+
 
 interface SideBarProps {
-    open: boolean,
-    closeSideBar: () => void
+    isOpen: boolean,
+    close: () => void
 }
 
-const SideBar:FC<SideBarProps> = React.memo(({closeSideBar, open}) => {
-
-    const closeSideBarHandler = () => {
-        closeSideBar()
-    }
-
+const SideBar:FC<SideBarProps> = React.memo(({close, isOpen}) => {
     return (
-        <Drawer variant="temporary" open={open}>
+        <Drawer variant="temporary" open={isOpen}>
             <Toolbar
                 sx={{
                     display: 'flex',
@@ -27,16 +22,12 @@ const SideBar:FC<SideBarProps> = React.memo(({closeSideBar, open}) => {
                     justifyContent: 'flex-end',
                     px: [1],
                 }}>
-                <IconButton onClick={closeSideBarHandler}>
+                <IconButton onClick={close}>
                     <ChevronLeftIcon />
                 </IconButton>
             </Toolbar>
             <Divider />
-            <List component="nav">
-                {mainListItems}
-                <Divider sx={{ my: 1 }} />
-                {secondaryListItems}
-            </List>
+            <SideBarMenu />
       </Drawer>
     );
 })

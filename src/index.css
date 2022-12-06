@@ -15,17 +15,6 @@ a {
   text-decoration: none;
 }
 
-.logo {
-  display: flex;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff
-}
-
-.menu {
-  margin-left: 16px;
-}
-
 .menu a {
   color: #fff;
   display: inline-block;

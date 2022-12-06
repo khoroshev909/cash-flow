@@ -1,11 +1,13 @@
 import React from 'react';
-import Layout from "../layouts/Layout";
+import Layout from "../layout/Layout";
 
-export const LoginPage = React.memo(() => {
+const LoginPage = React.memo(() => {
     return (
         <Layout>
             <h4>Login</h4>
         </Layout>
     );
 });
+
+export default LoginPage
 

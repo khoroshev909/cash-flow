@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {FC} from 'react';
 import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -59,18 +59,18 @@ function preventDefault(event: React.MouseEvent) {
   event.preventDefault();
 }
 
-export default function Orders() {
+export const Orders:FC = () => {
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Title>Последние операции</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Дата</TableCell>
+            <TableCell>Сумма</TableCell>
+            <TableCell>Тип</TableCell>
+            <TableCell>Описание</TableCell>
+            <TableCell align="right">Баланс</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -86,7 +86,7 @@ export default function Orders() {
         </TableBody>
       </Table>
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
+        Смотреть всю историю
       </Link>
     </React.Fragment>
   );

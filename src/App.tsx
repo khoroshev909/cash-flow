@@ -1,20 +1,33 @@
-import React from 'react';
-import {Routes, Route} from "react-router-dom";
-import {HomePage, HistoryPage, LoginPage, FundPage} from "./components/pages";
+import React, { Suspense } from 'react';
+import {Routes, Route, Navigate} from "react-router-dom";
 import {ToastContainer} from 'react-toastify';
+import ProtectedRoute from './components/routes/ProtectedRoute';
 import 'react-toastify/dist/ReactToastify.css';
-import Dashboard from "./components/dashboard/Dashboard";
+import LoginPage from './components/pages/LoginPage';
+import FundListPage from './components/pages/FundListPage';
+import FundPage from './components/pages/FundPage';
+
+const HomePage = React.lazy(() => import(
+  /* webpackChunkName: "[Home]" */
+  './components/pages/Home/HomePage'
+))
 
 function App() {
-
   return (
     <div className="app">
         <Routes>
-            <Route path="/" element={<HomePage/>} />
-            <Route path="/example" element={<Dashboard/>} />
-            <Route path="/history" element={<HistoryPage/>} />
-            <Route path="/history/:fundId" element={<FundPage/>} />
-            <Route path="/login" element={<LoginPage/>} />
+        <Route 
+          path='/'
+          element={<ProtectedRoute route={
+            <Suspense fallback={<h4>Loading...</h4>}>
+              <HomePage/>
+            </Suspense>}/>} />
+
+          <Route path="/funds" element={<FundListPage/>} />
+          <Route path="/funds/:fundId" element={<FundPage/>} />
+          <Route path="/login" element={<LoginPage/>} />
+
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
         <ToastContainer />
     </div>

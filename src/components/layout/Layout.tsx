@@ -1,0 +1,67 @@
+import React, {FC, useState, useEffect} from 'react';
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import {Header} from "./Header";
+import SideBar from "./SideBar"
+import Footer from './Footer'
+import {useAppSelector} from '../../store'
+import {authIdSelector, isLoggedInSelector} from '../../store/auth/selectors'
+import {useActions} from '../../hooks/useActions'
+import errorDisplay from '../../utils/errorDisplay'
+
+interface LayoutProps {
+    children: React.ReactNode
+};
+
+const Layout:FC<LayoutProps> = React.memo(({children}) => {
+
+    const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
+
+    const authId = useAppSelector(authIdSelector())
+    const isLogged = useAppSelector(isLoggedInSelector())
+
+    const {getAuthInfo} = useActions()
+
+    const { loading, info: userData, error } = useAppSelector(state => state.auth)
+
+    useEffect(() => {
+        if (isLogged && authId) {
+            getAuthInfo(authId)
+        }
+    }, [isLogged, authId])
+
+    useEffect(() => {
+        if (error) {
+            errorDisplay(error)
+        }
+    }, [error])
+
+    if (loading) {
+      return <h4>Loading...</h4>
+    }
+
+    return (
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            color: 'primary.main'
+        }}>
+            <CssBaseline />
+            <Header 
+                isOpenSidebar={isOpenSidebar}
+                openSideBar={() => setIsOpenSidebar(true)}
+                isLogged={isLogged}
+                userData={userData} />
+            <SideBar
+                isOpen={isOpenSidebar}
+                close={() => setIsOpenSidebar(false)} />
+            <Container maxWidth="xl" sx={{ mt: 4}}>
+                {children}
+                <Footer />
+            </Container>
+        </Box>
+    );
+})
+
+export default Layout;

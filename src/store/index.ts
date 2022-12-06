@@ -1,4 +1,5 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
+import authReducer from './auth/authSlice';
 import {billApi} from "../services/RTK/billApi";
 import {fundApi} from "../services/RTK/fundApi";
 import currentFundReducer from "./funds/currentFundSlice";
@@ -6,6 +7,7 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 
 const rootReducer = combineReducers({
+  auth: authReducer,
   [billApi.reducerPath]: billApi.reducer,
   [fundApi.reducerPath]: fundApi.reducer,
   currentFund: currentFundReducer

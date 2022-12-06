@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React,{FC} from 'react';
 import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
+import { FileChangeInfo } from 'fs/promises';
 
 // Generate Sales Data
 function createData(time: string, amount?: number) {
@@ -20,12 +21,12 @@ const data = [
   createData('24:00', undefined),
 ];
 
-export default function Chart() {
+export const Chart:FC = () => {
   const theme = useTheme();
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Аналитика</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -54,7 +55,7 @@ export default function Chart() {
                 ...theme.typography.body1,
               }}
             >
-              Sales ($)
+              Баланс ($)
             </Label>
           </YAxis>
           <Line

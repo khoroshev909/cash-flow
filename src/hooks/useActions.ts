@@ -1,9 +1,11 @@
 import {useAppDispatch} from "../store";
 import {bindActionCreators} from "@reduxjs/toolkit";
 import * as fundActions from '../store/funds/asyncActions'
+import * as authActions from '../store/auth/asyncActions'
 
 const actions = {
-    ...fundActions
+    ...fundActions,
+    ...authActions
 }
 
 export const useActions = () => {

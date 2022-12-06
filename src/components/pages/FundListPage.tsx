@@ -2,9 +2,9 @@ import React, {useEffect} from 'react';
 import {Link} from "react-router-dom";
 import errorDisplay from "../../utils/errorDisplay";
 import {fundApi} from "../../services/RTK/fundApi";
-import Layout from "../layouts/Layout";
+import Layout from "../layout/Layout";
 
-export const HistoryPage = React.memo(() => {
+const FundListPage = React.memo(() => {
 
     const {data, isLoading, error} = fundApi.useFetchAllFundsQuery(null)
 
@@ -24,7 +24,7 @@ export const HistoryPage = React.memo(() => {
                     <>
                         {data?.items.map((fund) => (
                             <div key={fund._id}>
-                                <Link to={`/history/${fund._id}`}>{fund.title}</Link>
+                                <Link to={`/funds/${fund._id}`}>{fund.title}</Link>
                             </div>
                         ))}
                     </>
@@ -33,4 +33,6 @@ export const HistoryPage = React.memo(() => {
         </Layout>
     );
 });
+
+export default FundListPage
 

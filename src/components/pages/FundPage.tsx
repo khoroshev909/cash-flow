@@ -4,9 +4,9 @@ import errorDisplay from "../../utils/errorDisplay";
 import {useAppSelector} from "../../store";
 import {useActions} from "../../hooks/useActions";
 import {fundApi} from "../../services/RTK/fundApi";
-import Layout from "../layouts/Layout";
+import Layout from "../layout/Layout";
 
-export const FundPage = React.memo(() => {
+const FundPage = React.memo(() => {
 
     const navigate = useNavigate()
     const {fundId} = useParams()
@@ -72,4 +72,6 @@ export const FundPage = React.memo(() => {
         </Layout>
     );
 });
+
+export default FundPage
 

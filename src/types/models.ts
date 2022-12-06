@@ -18,12 +18,20 @@ export enum COMMENT_TYPE {
 
 export interface IUser {
     createdAt: number;
+    username: string,
     email: string;
     avatar: string;
     password: string;
     updatedAt: number;
     _id: string;
     id: string;
+}
+
+export interface UserData {
+    _id: string,
+    email: string,
+    avatar: string,
+    username: string
 }
 
 export interface IBill {
