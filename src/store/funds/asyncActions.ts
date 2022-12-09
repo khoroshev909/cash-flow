@@ -1,13 +1,13 @@
 import {billService, commentService, fundService, userService} from "../../services";
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {FundFullInfoResponse, FundResponse, IFund} from "./types";
+import {FundFullInfoResponse, IFund} from "./types";
 import {IComment, IUser} from "../../types/models";
 
-export const getFunds = createAsyncThunk<FundResponse>( 'funds/getFunds',
+export const getFunds = createAsyncThunk<IFund[]>( 'funds/getFunds',
     async (_, thunkAPI) => {
     try {
-        const { items, count } = await fundService.fetchAll()
-        return { items, count }
+        const data = await fundService.fetchAll()
+        return data
     } catch (error: any) {
         return thunkAPI.rejectWithValue(error.message || 'Something went wrong')
     }
@@ -24,7 +24,7 @@ export const getFundFullInfo = createAsyncThunk<FundFullInfoResponse, IFund>( 'c
                 reviewers.push(reviewer)
             }
             const bill = await billService.fetchById(fund.bill)
-            const billOwner = [...reviewers, creator].find((user) => user._id === bill.owner) as IUser
+            const billOwner = [...reviewers, creator].find((user) => user._id === bill.userId) as IUser
             for (let i = 0; i < fund.comments.length; i++) {
                 const comment = await commentService.fetchById(fund.comments[i])
                 comments.push(comment)

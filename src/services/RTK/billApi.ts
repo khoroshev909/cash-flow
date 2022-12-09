@@ -8,13 +8,9 @@ export const billApi = createApi({
         { baseUrl: configFile.REACT_APP_BASE_ENDPOINT }),
     // tagTypes: ['Post'],
     endpoints: (build ) => ({
-        fetchAllBills: build.query<IBill[], { limit: number, page: number }>({
-            query: ({limit = 5, page = 1}) => ({
-                url: '/bills',
-                params: {
-                    limit: limit,
-                    page: page
-                }
+        fetchAllBills: build.query<IBill[], null>({
+            query: () => ({
+                url: '/bills'
             }),
             // providesTags: result => ['Post']
         }),

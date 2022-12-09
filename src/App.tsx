@@ -9,7 +9,7 @@ import FundPage from './components/pages/FundPage';
 
 const HomePage = React.lazy(() => import(
   /* webpackChunkName: "[Home]" */
-  './components/pages/Home/HomePage'
+  './components/pages/HomePage'
 ))
 
 function App() {

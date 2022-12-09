@@ -8,44 +8,45 @@ import Layout from "../layout/Layout";
 
 const FundPage = React.memo(() => {
 
-    const navigate = useNavigate()
-    const {fundId} = useParams()
-    const { getFundFullInfo } = useActions()
+    // const navigate = useNavigate()
+    // const {fundId} = useParams()
+    // const { getFundFullInfo } = useActions()
 
-    const {currentSelector, error: queryError, isLoading} = fundApi.useFetchAllFundsQuery(null, {
-        selectFromResult: ({ data, error, isLoading }) => ({
-            currentSelector: data?.items.find((fund) => fund._id === fundId),
-            error,
-            isLoading
-        })
-    })
+    // const {currentSelector, error: queryError, isLoading} = fundApi.useFetchAllFundsQuery(null, {
+    //     selectFromResult: ({ data, error, isLoading }) => ({
+    //         currentSelector: data?.items.find((fund) => fund._id === fundId),
+    //         error,
+    //         isLoading
+    //     })
+    // })
 
-    const {
-        loading,
-        error: actionError,
-        fund,
-        creator,
-        reviewers,
-        bill,
-        billOwner,
-        comments,
-    } = useAppSelector(state => state.currentFund)
+    // const {
+    //     loading,
+    //     error: actionError,
+    //     fund,
+    //     creator,
+    //     reviewers,
+    //     bill,
+    //     billOwner,
+    //     comments,
+    // } = useAppSelector(state => state.currentFund)
 
-    useEffect(() => {
-        if (currentSelector && fund?._id !== fundId) {
-            getFundFullInfo(currentSelector)
-        }
-    }, [currentSelector, fundId])
+    // useEffect(() => {
+    //     if (currentSelector && fund?._id !== fundId) {
+    //         getFundFullInfo(currentSelector)
+    //     }
+    // }, [currentSelector, fundId])
 
-    useEffect(() => {
-        if (queryError || actionError) {
-            errorDisplay(queryError || actionError)
-        }
-    }, [queryError, actionError])
+    // useEffect(() => {
+    //     if (queryError || actionError) {
+    //         errorDisplay(queryError || actionError)
+    //     }
+    // }, [queryError, actionError])
 
     return (
         <Layout>
-            {loading ? (
+            <h4>Fund Page</h4>
+            {/* {loading ? (
                 <h4>Loading...</h4>
             ) : (
                 <>
@@ -68,7 +69,7 @@ const FundPage = React.memo(() => {
                         ))}
                     </div>
                 </>
-            )}
+            )} */}
         </Layout>
     );
 });

@@ -4,7 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import {UserData} from '../../types/models';
 import MuiAppBar from '@mui/material/AppBar';
-import {MenuButton, Logo, MainMenu, Avatar, UserMenu} from '../ui';
+import {MenuButton, Logo, MainMenu, Avatar, UserMenu} from '../../components';
 
 interface HeaderProps {
     isOpenSidebar: boolean,

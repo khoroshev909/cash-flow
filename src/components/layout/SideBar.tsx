@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Divider from '@mui/material/Divider'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import {SideBarMenu} from '../../components/ui'
+import {SideBarMenu} from '../../components'
 
 
 interface SideBarProps {
@@ -12,7 +12,7 @@ interface SideBarProps {
     close: () => void
 }
 
-const SideBar:FC<SideBarProps> = React.memo(({close, isOpen}) => {
+export const SideBar:FC<SideBarProps> = React.memo(({close, isOpen}) => {
     return (
         <Drawer variant="temporary" open={isOpen}>
             <Toolbar
@@ -32,4 +32,3 @@ const SideBar:FC<SideBarProps> = React.memo(({close, isOpen}) => {
     );
 })
  
-export default SideBar;

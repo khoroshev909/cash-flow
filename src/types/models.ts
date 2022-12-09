@@ -5,6 +5,31 @@ export enum BILL_TYPES {
     IP = 'IP'
 }
 
+export enum BANK_TYPES {
+    SBER = 'sber',
+    VTB = 'vtb',
+    TINKOF = 'tinkof',
+    OPEN = 'open'
+}
+
+interface IMap {
+    [key: string]: string
+}
+
+export const banksMap: IMap = {
+    sber: 'Сбер',
+    vtb: 'ВТБ',
+    tinkof: 'Тиньков',
+    open: 'Открытие'
+}
+
+export const billTypesMap: IMap = {
+    card: 'карта',
+    deposit: 'депозит',
+    business: 'бизнес',
+    ip: 'ИП'
+}
+
 export enum CURRENCY_CODE {
     EUR = 'EUR',
     USD = 'USD',
@@ -37,11 +62,11 @@ export interface UserData {
 export interface IBill {
     createdAt: number;
     type: BILL_TYPES;
-    bank: string,
+    bank: BANK_TYPES,
     account: string;
     balance: number;
     reviewers: string[];
-    owner: string;
+    userId: string;
     updatedAt: number;
     currency: CURRENCY_CODE;
     _id: string;

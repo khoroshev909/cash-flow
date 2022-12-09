@@ -22,9 +22,9 @@ const FundListPage = React.memo(() => {
                 <div>
                     <h4>History</h4>
                     <>
-                        {data?.items.map((fund) => (
+                        {data?.map((fund) => (
                             <div key={fund._id}>
-                                <Link to={`/funds/${fund._id}`}>{fund.title}</Link>
+                                <Link to={`/funds/${fund._id}`}>{fund.details}</Link>
                             </div>
                         ))}
                     </>

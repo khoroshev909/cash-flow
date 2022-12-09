@@ -3,8 +3,8 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import {Header} from "./Header";
-import SideBar from "./SideBar"
-import Footer from './Footer'
+import {SideBar} from "./SideBar"
+import {Footer} from './Footer'
 import {useAppSelector} from '../../store'
 import {authIdSelector, isLoggedInSelector} from '../../store/auth/selectors'
 import {useActions} from '../../hooks/useActions'

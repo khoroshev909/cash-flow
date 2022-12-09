@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
-const Footer:FC = React.memo(() => {
+export const Footer:FC = React.memo(() => {
     return (
         <Box sx={{py: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <Typography variant="subtitle2" color="text.secondary" align="center">
@@ -19,4 +19,3 @@ const Footer:FC = React.memo(() => {
     );
 })
  
-export default Footer;

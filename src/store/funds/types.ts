@@ -1,8 +1,8 @@
 import {IBill, IComment, IUser} from "../../types/models";
 
 export enum FUND_TYPES {
-    EXSPENSE = 'EXSPENSE',
-    INCOM = 'INCOM'
+    EXSPENSE = 'exspense',
+    INCOM = 'incom'
 }
 
 export interface IFund {
@@ -10,7 +10,8 @@ export interface IFund {
     type: FUND_TYPES;
     bill: string;
     amount: number;
-    title: string;
+    balance: number,
+    details: string;
     comments: string[];
     reviewers: string[];
     creator: string;
