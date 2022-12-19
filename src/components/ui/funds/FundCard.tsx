@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import {IFund} from "../../../store/funds/types";
+import {FUND_TYPES, IFund} from "../../../store/funds/types";
 import Box from "@mui/material/Box";
 import {BalanceInfo, AccountInfo, FundTypeIcon} from "../../../components";
 import {getBillByIdSelector} from "../../../services/RTK/billApi";
@@ -19,13 +19,12 @@ export const FundCard:FC<CardProps> = React.memo(({ fund }) => {
     if (!bill) return <h4>Loading...</h4>
 
     return (
-        <Card sx={{ mb: 2, '&:hover': { cursor: 'pointer' } }}>
+        <Card sx={{ mb: 2, maxWidth: '700px', '&:hover': { cursor: 'pointer' } }}>
             <CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-
                     <Box>
-                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            {displayDetails(fund.details)}
+                        <Typography variant="subtitle2">
+                            {dayjs(fund.createdAt).format('DD/MM/YY')}
                         </Typography>
 
                         <AccountInfo bill={bill} />
@@ -43,14 +42,35 @@ export const FundCard:FC<CardProps> = React.memo(({ fund }) => {
                         </Box>
                     </Box>
 
-
-                    <Box>
-                        <Typography variant="body2">
-                            {dayjs(fund.createdAt).format('DD/MM/YY')}
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'end' }}>
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                            {displayDetails(fund.details)}
                         </Typography>
+
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Typography variant="body2" marginRight={1}>
+                                До:
+                            </Typography>
+                            <BalanceInfo
+                                variant="h6"
+                                balance={fund.type === FUND_TYPES.INCOM ? fund.balance - fund.amount : fund.balance + fund.amount}
+                                currency={bill.currency}
+                                iconSize={18} />
+                        </Box>
+
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Typography variant="body2" marginRight={0.5}>
+                                После:
+                            </Typography>
+                            <BalanceInfo
+                                variant="h6"
+                                balance={fund.balance}
+                                currency={bill.currency}
+                                iconSize={18} />
+                        </Box>
+
                     </Box>
                 </Box>
-
             </CardContent>
         </Card>
     );

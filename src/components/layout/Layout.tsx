@@ -43,6 +43,7 @@ const Layout:FC<LayoutProps> = React.memo(({children}) => {
 
     return (
         <Box sx={{
+            height: '100vh',
             display: 'flex',
             flexDirection: 'column',
             color: 'primary.main'
@@ -56,7 +57,15 @@ const Layout:FC<LayoutProps> = React.memo(({children}) => {
             <SideBar
                 isOpen={isOpenSidebar}
                 close={() => setIsOpenSidebar(false)} />
-            <Container maxWidth="xl" sx={{ mt: 4}}>
+            <Container
+                maxWidth="xl"
+                sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    marginY: 4
+            }}>
                 {children}
                 <Footer />
             </Container>

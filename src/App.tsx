@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import LoginPage from './components/pages/LoginPage';
 import FundListPage from './components/pages/FundListPage';
 import FundPage from './components/pages/FundPage';
+import SignUpPage from "./components/pages/SignUpPage";
 
 const HomePage = React.lazy(() => import(
   /* webpackChunkName: "[Home]" */
@@ -26,6 +27,7 @@ function App() {
           <Route path="/funds" element={<FundListPage/>} />
           <Route path="/funds/:fundId" element={<FundPage/>} />
           <Route path="/login" element={<LoginPage/>} />
+            <Route path="/signup" element={<SignUpPage />} />
 
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>

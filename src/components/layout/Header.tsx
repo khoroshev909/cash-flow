@@ -44,6 +44,8 @@ export const Header:FC<HeaderProps> = React.memo(({isOpenSidebar, openSideBar, i
                         alignItems: 'center',
                         display: { xs: 'none', md: 'flex' }
                     }}>
+                        <Link to="/login" >Вход</Link>
+                        <Link to="/signup" >Регистрация</Link>
                         <MainMenu />
                         <Avatar 
                             data={userData} 

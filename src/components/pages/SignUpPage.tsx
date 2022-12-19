@@ -2,15 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import {default as  MuiLink} from '@mui/material/Link';
+import {default as MuiLink} from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Layout from "../layout/Layout";
 import {Title} from '../../components'
 
-const LoginPage = React.memo(() => {
+const SignUpPage = () => {
 
     const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -29,14 +27,23 @@ const LoginPage = React.memo(() => {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    alignItems: 'center',
+                    alignItems: 'center'
                 }}
             >
                 <Box sx={{
                     maxWidth: '460px'
                 }}>
-                    <Title>Вход</Title>
-                    <Box component="form" onSubmit={submitHandler} noValidate sx={{ mt: 1 }}>
+                    <Title>Регистрация</Title>
+                    <Box component="form" noValidate onSubmit={submitHandler} sx={{ mt: 1 }} >
+                        <TextField
+                            margin="normal"
+                            autoComplete="username"
+                            name="username"
+                            fullWidth
+                            id="username"
+                            label="Имя"
+                            autoFocus
+                        />
                         <TextField
                             margin="normal"
                             fullWidth
@@ -44,7 +51,6 @@ const LoginPage = React.memo(() => {
                             label="Email"
                             name="email"
                             autoComplete="email"
-                            autoFocus
                         />
                         <TextField
                             margin="normal"
@@ -53,11 +59,7 @@ const LoginPage = React.memo(() => {
                             label="Пароль"
                             type="password"
                             id="password"
-                            autoComplete="current-password"
-                        />
-                        <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
-                            label="Запомнить меня"
+                            autoComplete="password"
                         />
                         <Button
                             type="submit"
@@ -65,17 +67,12 @@ const LoginPage = React.memo(() => {
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Вход
+                            Зарегистрироваться
                         </Button>
-                        <Grid container>
-                            <Grid item xs>
-                                <MuiLink href="#" variant="body2">
-                                    Забыли пароль?
-                                </MuiLink>
-                            </Grid>
+                        <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link to="/signup">
-                                    Зарегистрироваться
+                                <Link to="/login">
+                                    Уже есть аккаунт
                                 </Link>
                             </Grid>
                         </Grid>
@@ -84,7 +81,6 @@ const LoginPage = React.memo(() => {
             </Box>
         </Layout>
     );
-})
+};
 
-export default LoginPage
-
+export default SignUpPage;
