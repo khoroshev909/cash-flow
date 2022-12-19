@@ -9,7 +9,7 @@ import Layout from "../layout/Layout";
 const FundPage = React.memo(() => {
 
     // const navigate = useNavigate()
-    // const {fundId} = useParams()
+    const {fundId} = useParams()
     // const { getFundFullInfo } = useActions()
 
     // const {currentSelector, error: queryError, isLoading} = fundApi.useFetchAllFundsQuery(null, {
@@ -46,6 +46,7 @@ const FundPage = React.memo(() => {
     return (
         <Layout>
             <h4>Fund Page</h4>
+            <h4>{fundId}</h4>
             {/* {loading ? (
                 <h4>Loading...</h4>
             ) : (

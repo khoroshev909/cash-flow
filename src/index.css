@@ -21,3 +21,13 @@ a {
   margin-right: 10px;
 }
 
+.filter-option {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 16px;
+  padding: 0 12px;
+}
+

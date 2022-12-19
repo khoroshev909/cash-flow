@@ -39,3 +39,5 @@ export const billApi = createApi({
         // })
     })
 })
+
+export const getBillByIdSelector = (id: string) => billApi.endpoints.fetchAllBills.useQueryState(null).data?.find(bill => bill._id === id)

@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import {IBill} from '../../../types/models';
-import {AccountInfo} from '../../../components'
+import {AccountInfo} from '../../index'
 import { CurrentBillContext } from '../../pages/HomePage';
 
 interface SelectBillProps {
@@ -32,7 +32,7 @@ export const SelectBill:FC<SelectBillProps> = React.memo(({ bills, current }) =>
             label="Выберите счёт">
             {bills.map((bill) => (
                 <MenuItem key={bill._id} value={bill.account}>
-                    <AccountInfo type={bill.type} bank={bill.bank} account={bill.account} />
+                    <AccountInfo bill={bill} />
                 </MenuItem>
             ))}
         </Select>

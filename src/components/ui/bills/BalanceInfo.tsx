@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {CURRENCY_CODE} from '../../../types/models'
 import Typography from '@mui/material/Typography';
 import parseBalance from '../../../utils/parseBalance'
-import {CurrencyIcon} from '../..'
+import {CurrencyIcon} from '../../index'
 import Box from "@mui/material/Box";
 
 interface BalanceProps {

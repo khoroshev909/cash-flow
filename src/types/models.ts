@@ -1,8 +1,28 @@
+import {keys} from "lodash";
+
 export enum BILL_TYPES {
     DEPOSIT = 'DEPOSIT',
     CARD = 'CARD',
     BUSINESS = 'BUSINESS',
     IP = 'IP'
+}
+export const billTypesMap = {
+    CARD: 'карта',
+    DEPOSIT: 'депозит',
+    BUSINESS: 'бизнес',
+    IP: 'ИП'
+}
+
+export enum SORT_FUNDS {
+    CREATED_DESC = 'created_desc',
+    CREATED_ASC = 'created_asc',
+    AMOUNT_DESC = 'amount_desc',
+    AMOUNT_ASC = 'amount_asc',
+}
+
+export interface SortItem {
+    label: string,
+    value: SORT_FUNDS
 }
 
 export enum BANK_TYPES {
@@ -12,23 +32,30 @@ export enum BANK_TYPES {
     OPEN = 'open'
 }
 
-interface IMap {
+export interface IMap {
     [key: string]: string
 }
 
-export const banksMap: IMap = {
+export type bankTypes = {
+    sber: string,
+    vtb: string,
+    tinkof: string,
+    open: string
+}
+
+export const banksMap: bankTypes = {
     sber: 'Сбер',
     vtb: 'ВТБ',
     tinkof: 'Тиньков',
     open: 'Открытие'
 }
 
-export const billTypesMap: IMap = {
-    card: 'карта',
-    deposit: 'депозит',
-    business: 'бизнес',
-    ip: 'ИП'
-}
+// export type billTypes = {
+//     card: string,
+//     deposit: string,
+//     business: string,
+//     ip: string
+// }
 
 export enum CURRENCY_CODE {
     EUR = 'EUR',
