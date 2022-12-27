@@ -9,6 +9,7 @@ import {useAppSelector} from '../../store'
 import {authIdSelector, isLoggedInSelector} from '../../store/auth/selectors'
 import {useActions} from '../../hooks/useActions'
 import errorDisplay from '../../utils/errorDisplay'
+import {getAuthId} from "../../services/localStorage.service";
 
 interface LayoutProps {
     children: React.ReactNode
@@ -18,18 +19,9 @@ const Layout:FC<LayoutProps> = React.memo(({children}) => {
 
     const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
 
-    const authId = useAppSelector(authIdSelector())
     const isLogged = useAppSelector(isLoggedInSelector())
 
-    const {getAuthInfo} = useActions()
-
     const { loading, info: userData, error } = useAppSelector(state => state.auth)
-
-    useEffect(() => {
-        if (isLogged && authId) {
-            getAuthInfo(authId)
-        }
-    }, [isLogged, authId])
 
     useEffect(() => {
         if (error) {
