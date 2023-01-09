@@ -6,8 +6,7 @@ import {Header} from "./Header";
 import {SideBar} from "./SideBar"
 import {Footer} from './Footer'
 import {useAppSelector} from '../../store'
-import {authIdSelector, isLoggedInSelector} from '../../store/auth/selectors'
-import {useActions} from '../../hooks/useActions'
+import {isLoggedInSelector} from '../../store/auth/selectors'
 import errorDisplay from '../../utils/errorDisplay'
 
 interface LayoutProps {
@@ -18,18 +17,9 @@ const Layout:FC<LayoutProps> = React.memo(({children}) => {
 
     const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
 
-    const authId = useAppSelector(authIdSelector())
     const isLogged = useAppSelector(isLoggedInSelector())
 
-    const {getAuthInfo} = useActions()
-
-    const { loading, info: userData, error } = useAppSelector(state => state.auth)
-
-    useEffect(() => {
-        if (isLogged && authId) {
-            getAuthInfo(authId)
-        }
-    }, [isLogged, authId])
+    const {loading, info: userData, error} = useAppSelector(state => state.auth)
 
     useEffect(() => {
         if (error) {

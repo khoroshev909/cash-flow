@@ -14,7 +14,7 @@ export interface IFund {
     details: string;
     comments: string[];
     reviewers: string[];
-    creator: string;
+    userId: string;
     updatedAt: number;
     _id: string;
     id: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {FormikProps, useFormik} from 'formik'
 import * as yup from "yup"
 import Button from '@mui/material/Button';
@@ -10,8 +10,13 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Layout from "../layout/Layout";
 import {Title, EmailControl, PasswordControl} from '../../components'
+import {login} from "../../services/auth.service";
+import {useAppDispatch} from "../../store";
 
 const LoginPage = React.memo(() => {
+
+    const navigate = useNavigate()
+    const dispatch = useAppDispatch()
     interface Values {
         email: string,
         password: string
@@ -28,7 +33,8 @@ const LoginPage = React.memo(() => {
             email: email.trim().toLowerCase(),
             password: password.trim()
         }
-        console.log(data)
+        dispatch(login(data))
+        navigate('/')
     };
 
     const {values, handleChange, handleSubmit, errors, isSubmitting, touched}: FormikProps<Values> =

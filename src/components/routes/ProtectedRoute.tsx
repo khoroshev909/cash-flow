@@ -11,7 +11,7 @@ interface ProtectedRouteProps {
 const ProtectedRoute:FC<ProtectedRouteProps> = ({ route, redirectTo }) => {
 
     const location = useLocation()
-    const isLoggedIn = useSelector(isLoggedInSelector());
+    const isLoggedIn = useSelector(isLoggedInSelector())
 
     if (!isLoggedIn) {
         return (

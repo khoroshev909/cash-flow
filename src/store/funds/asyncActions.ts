@@ -18,7 +18,7 @@ export const getFundFullInfo = createAsyncThunk<FundFullInfoResponse, IFund>( 'c
         try {
             const reviewers: IUser[] = []
             const comments: IComment[] = []
-            const creator = await userService.fetchById(fund.creator)
+            const creator = await userService.fetchById(fund.userId)
             for (let i = 0; i < fund.reviewers.length; i++) {
                 const reviewer = await userService.fetchById(fund.reviewers[i])
                 reviewers.push(reviewer)
