@@ -73,10 +73,8 @@ export interface IUser {
     username: string,
     email: string;
     avatar: string;
-    password: string;
     updatedAt: number;
     _id: string;
-    id: string;
 }
 
 export interface UserData {

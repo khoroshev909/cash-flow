@@ -16,10 +16,11 @@ httpService.interceptors.request.use(
         const refreshToken = storageService.getRefreshToken()
         const expiresIn = storageService.getExpiresIn()
         if (refreshToken && expiresIn && +expiresIn < Date.now()) {
-            const { data } = await authService.post('token', {
+            const {data} = await authService.post('token', {
                 grant_type: 'refresh_token',
                 refresh_token: refreshToken
             })
+            console.log(data)
             storageService.setTokens({
                 idToken: data.id_token,
                 refreshToken: data.refresh_token,
@@ -29,7 +30,7 @@ httpService.interceptors.request.use(
         }
         const accessToken = storageService.getAccessToken()
         if (accessToken) {
-            config.params = { ...config.params, auth: accessToken }
+            config.params = {...config.params, auth: accessToken}
         }
         return config
     },
@@ -37,5 +38,17 @@ httpService.interceptors.request.use(
         return Promise.reject(error)
     }
 )
+
+// httpService.interceptors.response.use(
+//     async function (response: AxiosResponse) {
+//         const {data} = response
+//         const transformed = Array.isArray(data) ? data : Object.keys(data).map(key => data[key])
+//         response.data = transformed
+//         return response
+//     },
+//     function (error) {
+//         return Promise.reject(error)
+//     }
+// )
 
 export default httpService

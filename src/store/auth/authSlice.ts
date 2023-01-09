@@ -1,7 +1,7 @@
-import { PayloadAction } from '@reduxjs/toolkit'
-import { IUser, UserData } from './../../types/models'
-import { getAuthInfo } from './asyncActions'
-import { createSlice } from '@reduxjs/toolkit'
+import {PayloadAction} from '@reduxjs/toolkit'
+import {IUser, UserData} from './../../types/models'
+import {getAuthInfo} from './asyncActions'
+import {createSlice} from '@reduxjs/toolkit'
 
 interface AuthState {
     loading: boolean,

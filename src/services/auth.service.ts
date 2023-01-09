@@ -11,7 +11,13 @@ const authConfig = axios.create({
     }
 })
 
-interface AuthPayload {
+interface SignUpPayload {
+    email: string,
+    password: string,
+    username: string
+}
+
+interface LoginPayload {
     email: string,
     password: string
 }
@@ -23,7 +29,7 @@ export interface AuthResponse {
     expiresIn: number
 }
 
-export const login = ({ email, password }: AuthPayload) => async (dispatch: Dispatch) => {
+export const login = ({ email, password }: LoginPayload) => async (dispatch: Dispatch) => {
     try {
         const { data } = await authConfig.post<AuthResponse>('accounts:signInWithPassword', {
             email,
@@ -38,6 +44,30 @@ export const login = ({ email, password }: AuthPayload) => async (dispatch: Disp
     }
 }
 
+export const signUp = ({ email, password, username }: SignUpPayload) => async (dispatch: Dispatch) => {
+    try {
+        const { data } = await authConfig.post<AuthResponse>('accounts:signUp', {
+            email,
+            password,
+            returnSecureToken: true
+        })
+        setTokens({ ...data, expiresIn: Date.now() + data.expiresIn * 1000 })
+        const { localId: _id } = data
+        const avatar = 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1073.jpg'
+        await userService.create({
+            _id,
+            email,
+            username,
+            avatar,
+            createdAt: Date.now(),
+            updatedAt: Date.now()
+        })
+        dispatch(authActions.login({ avatar, username, _id, email }))
+    } catch (error: any) {
+        console.log(error)
+    }
+}
+//test@example.com
 export const logout = () => (dispatch: Dispatch) => {
     removeTokens()
     dispatch(authActions.logOut())

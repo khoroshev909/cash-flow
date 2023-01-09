@@ -14,7 +14,6 @@ export const CurrentBillContext = createContext<any>({})
 const HomePage:FC = React.memo(() => {
 
     const {data: bills, isLoading: billsLoading, error: billsError} = billApi.useFetchAllBillsQuery(null)
-
     const {data: funds, isLoading: fundsLoading, error: fundsError} = fundApi.useFetchAllFundsQuery(null)
 
     const loading = billsLoading && fundsLoading

@@ -7,8 +7,12 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Layout from "../layout/Layout";
 import {EmailControl, PasswordControl, TextInput, ConfirmPassword, Title} from '../../components'
+import {useAppDispatch} from "../../store";
+import {signUp} from "../../services/auth.service";
 
 const SignUpPage = React.memo(() => {
+
+    const dispatch = useAppDispatch()
 
     interface Values {
         username: string,
@@ -26,14 +30,14 @@ const SignUpPage = React.memo(() => {
         })
     })
 
-    const submitHandler = (values: Values) => {
+    const submitHandler = async (values: Values) => {
         const {username, email, password} = values
         const data = {
             username: username.trim(),
             email: email.trim().toLowerCase(),
             password: password.trim()
         }
-        console.log(data)
+        dispatch(signUp({ ...data }))
     };
 
     const {values, handleChange, handleSubmit, errors, isSubmitting, touched}: FormikProps<Values> =

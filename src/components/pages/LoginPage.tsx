@@ -12,7 +12,6 @@ import Layout from "../layout/Layout";
 import {Title, EmailControl, PasswordControl} from '../../components'
 import {login} from "../../services/auth.service";
 import {useAppDispatch} from "../../store";
-import {useActions} from "../../hooks/useActions";
 
 const LoginPage = React.memo(() => {
 
@@ -35,6 +34,7 @@ const LoginPage = React.memo(() => {
             password: password.trim()
         }
         dispatch(login(data))
+        navigate('/')
     };
 
     const {values, handleChange, handleSubmit, errors, isSubmitting, touched}: FormikProps<Values> =

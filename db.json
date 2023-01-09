@@ -1,236 +1,146 @@
-// funds
-[
 {
-"createdAt": 1669384884000,
-"type": "incom",
-"bill": "AoyW498t5RpizScgjNv5",
-"amount": 7500,
-"balance": 7500,
-"details": "eligendi ab dolor",
-"comments": [],
-"userId": "E3ZH4sl98Nc03iCySXpK",
-"updatedAt": 1669384884000,
-"_id": "sex6h7zfptyvd39uuvfc"
-},
-{
-"createdAt": 1669471284000,
-"type": "exspense",
-"bill": "AoyW498t5RpizScgjNv5",
-"balance": 5000,
-"amount": 2500,
-"details": "perspiciatis laboriosam sit",
-"comments": [],
-"userId": "E3ZH4sl98Nc03iCySXpK",
-"updatedAt": 1669471284000,
-"_id": "lh1zs25vwvkvp1p214lw"
-},
-{
-"createdAt": 1669557684000,
-"type": "incom",
-"bill": "AoyW498t5RpizScgjNv5",
-"amount": 12300,
-"balance": 17300,
-"details": "qui qui in",
-"comments": [],
-"userId": "E3ZH4sl98Nc03iCySXpK",
-"updatedAt": 1669557684000,
-"_id": "mk0jsr9lx59nbpxvcoz4"
-},
-{
-"createdAt": 1669644084000,
-"type": "exspense",
-"bill": "AoyW498t5RpizScgjNv5",
-"amount": 5300,
-"balance": 12000,
-"details": "hic occaecati necessitatibus",
-"comments": [],
-"userId": "E3ZH4sl98Nc03iCySXpK",
-"updatedAt": 1669644084000,
-"_id": "guavokr2yl0wbn9bejs5"
-},
-{
-"createdAt": 1669705284000,
-"type": "exspense",
-"bill": "AoyW498t5RpizScgjNv5",
-"amount": 12000,
-"balance": 0,
-"details": "vel voluptas et",
-"comments": [],
-"userId": "E3ZH4sl98Nc03iCySXpK",
-"updatedAt": 1669705284000,
-"_id": "37zlk3vz5bknc53xz6sf"
-},
- {
-  "createdAt": 1669711435000,
-  "type": "incom",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 2642.25,
-  "balance": 2642.25,
-  "details": "eligendi ab dolor",
-  "comments": ["hl8oD6tZS02HedtH4BhJ", "QzER6Nf5upCYl7Ljo1Al", "z9AZAlFBNOcfA0A7ghKQ"],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1669711435000,
-  "_id": "5cU3Ja0OnGLMVAszGbeK"
- },
- {
-  "createdAt": 1669930985000,
-  "type": "exspense",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "balance": 8548.25,
-  "amount": 701.96,
-  "details": "perspiciatis laboriosam sit",
-  "comments": [],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1669930985000,
-  "_id": "d20Taa76ygYx2OU1T0rX"
- },
- {
-  "createdAt": 1669995785000,
-  "type": "incom",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 11256,
-  "balance": 19804.25,
-  "details": "qui qui in",
-  "comments": ["K1YgWonYquJ9VmF6CYXs", "K1YgWonYquJ9VmF6CYXs"],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1669995785000,
-  "_id": "YELgzP1wbHcl3erpAi44"
- },
- {
-  "createdAt": 1670060585000,
-  "type": "exspense",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 5499.6,
-  "balance": 14304.65,
-  "details": "hic occaecati necessitatibus",
-  "comments": [],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1670060585000,
-  "_id": "3pjDBa3joPs5ajywH46t"
- },
- {
-  "createdAt": 1670157785000,
-  "type": "incom",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 15324.35,
-  "balance": 29629,
-  "details": "vel voluptas et",
-  "comments": ["QkfEhqXywU50GArz2jSU", "QkfEhqXywU50GArz2jSU"],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1670157785000,
-  "_id": "AD9NpKNdef66VMpm0Ygu"
- },
- {
-  "createdAt": 1670271359000,
-  "type": "incom",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 965.93,
-  "balance": 30594.93,
-  "details": "ex pariatur rerum",
-  "comments": [],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1670271359000,
-  "_id": "c5vmeVUXmW1TvYMAh02v"
- },
- {
-  "createdAt": 1670314559000,
-  "type": "exspense",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 7711.80,
-  "balance": 22883.13,
-  "details": "suscipit voluptatem nam",
-  "comments": [],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1670314559000,
-  "_id": "0TQ9tmGtkSeKVQwqKdEy"
- },
- {
-  "createdAt": 1670357759000,
-  "type": "incom",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 22025,
-  "balance": 44908.13,
-  "details": "ipsum vel odio",
-  "comments": [],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1670357759000,
-  "_id": "2dPNBTYaZBwy2Q69waOv"
- },
- {
-  "createdAt": 1670411759000,
-  "type": "exspense",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 5800.13,
-  "balance": 39108,
-  "details": "dolorum nobis laborum",
-  "comments": ["VuJJ3bQErjMhhmZgLJl5", "J8acqLhfxmwIMy5ESPtu", "zYBbY6prRDQhEQ2RmWae"],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1670411759000,
-  "_id": "GtMwhGSg9JVoslKgtsEt"
- },
- {
-  "createdAt": 1670421684000,
-  "type": "incom",
-  "bill": "AoyW498t5RpizScgjNv5",
-  "amount": 3235.60,
-  "balance": 42343.60,
-  "details": "et aliquam consequatur",
-  "comments": [],
-  "userId": "E3ZH4sl98Nc03iCySXpK",
-  "updatedAt": 1670421684000,
-  "_id": "FhgMNN1BCusH1BwOyV8q"
- }
-]
-
-// bills
-[
-    {
+  "users": {
+    "SLVc10fXyHUUNoxvFWT5BKXfaez2":   {
+      "createdAt": 1668946212519,
+      "email": "khoroshev909@gmail.com",
+      "username": "Евгений",
+      "surname": "Хорошев",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/202.jpg",
+      "password": "khoroshev909@gmail.com",
+      "updatedAt": 1668946212520,
+      "_id": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+      "id": "SLVc10fXyHUUNoxvFWT5BKXfaez2"
+    },
+    "ttuO8vJtDsfsB4RR1zGm":   {
+      "createdAt": 1668946212520,
+      "email": "Johathan_Franecki39@yahoo.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1054.jpg",
+      "password": "4o2ExO3RRF8iR61",
+      "updatedAt": 1668946212520,
+      "_id": "ttuO8vJtDsfsB4RR1zGm",
+      "id": "ttuO8vJtDsfsB4RR1zGm"
+    },
+    "nI6KSuZPItshZK66onBC":   {
+      "createdAt": 1668946212520,
+      "email": "Rory.Bins@hotmail.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/400.jpg",
+      "password": "0JBGecPhHN8XRAZ",
+      "updatedAt": 1668946212520,
+      "_id": "nI6KSuZPItshZK66onBC",
+      "id": "nI6KSuZPItshZK66onBC"
+    },
+    "mHuNWHGQ0kk2WRawEeE8":   {
+      "createdAt": 1668946212520,
+      "email": "Bailey.Jenkins26@gmail.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/922.jpg",
+      "password": "gvBeM8ulpLD2PuC",
+      "updatedAt": 1668946212521,
+      "_id": "mHuNWHGQ0kk2WRawEeE8",
+      "id": "mHuNWHGQ0kk2WRawEeE8"
+    },
+    "zlUNy043dlMWBVy3vYA4":   {
+      "createdAt": 1668946212521,
+      "email": "Montana.Armstrong@yahoo.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/746.jpg",
+      "password": "j47bWb91UrlAJG5",
+      "updatedAt": 1668946212521,
+      "_id": "zlUNy043dlMWBVy3vYA4",
+      "id": "zlUNy043dlMWBVy3vYA4"
+    },
+    "qmhuT3aW7enEz7pgbIyB":  {
+      "createdAt": 1668946212521,
+      "email": "Rosalee78@gmail.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/61.jpg",
+      "password": "33i1mOXcNpcjVtb",
+      "updatedAt": 1668946212521,
+      "_id": "qmhuT3aW7enEz7pgbIyB",
+      "id": "qmhuT3aW7enEz7pgbIyB"
+    },
+    "Pv6CuMR6ep1FnrIt5fEU":   {
+      "createdAt": 1668946212521,
+      "email": "Easter_Raynor40@gmail.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/907.jpg",
+      "password": "YtidEA4MPQxjG8G",
+      "updatedAt": 1668946212521,
+      "_id": "Pv6CuMR6ep1FnrIt5fEU",
+      "id": "Pv6CuMR6ep1FnrIt5fEU"
+    },
+    "dqweUBtRH3Zu80G8udZp": {
+      "createdAt": 1668946212521,
+      "email": "Clara.Moen26@gmail.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/646.jpg",
+      "password": "QeP2LJEr5uYMrcj",
+      "updatedAt": 1668946212521,
+      "_id": "dqweUBtRH3Zu80G8udZp",
+      "id": "dqweUBtRH3Zu80G8udZp"
+    },
+    "EjVGKtO7NctzAsbjlCfa":   {
+      "createdAt": 1668946212521,
+      "email": "Laverna_Bauch@yahoo.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1073.jpg",
+      "password": "mao_gRdl2YeyqWu",
+      "updatedAt": 1668946212521,
+      "_id": "EjVGKtO7NctzAsbjlCfa",
+      "id": "EjVGKtO7NctzAsbjlCfa"
+    },
+    "jnPApDjpiLaXfkpfIWmm":   {
+      "createdAt": 1668946212521,
+      "email": "Madyson.Turner3@gmail.com",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/801.jpg",
+      "password": "EpLptZKTuwhXIgr",
+      "updatedAt": 1668946212521,
+      "_id": "jnPApDjpiLaXfkpfIWmm",
+      "id": "jnPApDjpiLaXfkpfIWmm"
+    }
+  },
+  "bills": {
+    "AoyW498t5RpizScgjNv5": {
       "createdAt": 1668927684000,
-      "type": "card",
+      "type": "CARD",
       "account": "21689045",
       "bank": "sber",
-      "balance": 42343.60,
-      "userId": "E3ZH4sl98Nc03iCySXpK",
+      "balance": 42343.6,
+      "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
       "updatedAt": 1668927684000,
       "currency": "RUB",
       "_id": "AoyW498t5RpizScgjNv5"
+      },
+   "A8sG5N3PtXZ08ixxn6MO": {
+    "createdAt": 1668946513948,
+    "type": "DEPOSIT",
+    "account": "33015623",
+    "bank": "tinkof",
+    "balance": 2712.22,
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1668946513949,
+    "currency": "EUR",
+    "_id": "A8sG5N3PtXZ08ixxn6MO"
     },
-    {
-      "createdAt": 1668946513948,
-      "type": "deposit",
-      "account": "33015623",
-      "bank": "tinkof",
-      "balance": 2712.22,
-      "userId": "E3ZH4sl98Nc03iCySXpK",
-      "updatedAt": 1668946513949,
-      "currency": "EUR",
-      "_id": "A8sG5N3PtXZ08ixxn6MO"
-    },
-    {
+    "PsMwaPgqGF2AZimjZU9L":{
       "createdAt": 1668946513949,
-      "type": "business",
+      "type": "BUSINESS",
       "account": "94419144",
       "bank": "open",
       "balance": 1338.82,
-      "userId": "E3ZH4sl98Nc03iCySXpK",
+      "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
       "updatedAt": 1668946513949,
       "currency": "USD",
       "_id": "PsMwaPgqGF2AZimjZU9L"
-    },
-    {
+      },
+    "D4aDQKN29o6s6O6VlhFy":{
       "createdAt": 1668946513949,
-      "type": "ip",
+      "type": "IP",
       "account": "05062563",
       "bank": "sber",
       "balance": 24971.46,
-      "userId": "E3ZH4sl98Nc03iCySXpK",
+      "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
       "updatedAt": 1668946513949,
       "currency": "RUB",
       "_id": "D4aDQKN29o6s6O6VlhFy"
-    },
-    {
+      },
+    "joKyb4H3PpVPHQENSu6u": {
       "createdAt": 1668946513949,
-      "type": "deposit",
+      "type": "DEPOSIT",
       "account": "66793952",
       "bank": "vtb",
       "balance": 72533.18,
@@ -238,10 +148,10 @@
       "updatedAt": 1668946513949,
       "currency": "RUB",
       "_id": "joKyb4H3PpVPHQENSu6u"
-    },
-    {
+      },
+    "pS6kaRCIBXrfYM9cTwjn": {
       "createdAt": 1668946513949,
-      "type": "card",
+      "type": "CARD",
       "account": "55777347",
       "bank": "sber",
       "balance": 7797.65,
@@ -249,21 +159,21 @@
       "updatedAt": 1668946513949,
       "currency": "RUB",
       "_id": "pS6kaRCIBXrfYM9cTwjn"
-    },
-    {
+      },
+    "RN8lnjPN646zdwdeP14e": {
       "createdAt": 1668946513949,
-      "type": "business",
+      "type": "BUSINESS",
       "account": "31050942",
       "bank": "open",
-      "balance": 756.00,
+      "balance": 756,
       "userId": "nI6KSuZPItshZK66onBC",
       "updatedAt": 1668946513949,
       "currency": "EUR",
       "_id": "RN8lnjPN646zdwdeP14e"
-    },
-    {
+      },
+    "X7NGmMJxR08YkApxRZRI": {
       "createdAt": 1668946513949,
-      "type": "deposit",
+      "type": "DEPOSIT",
       "account": "76863224",
       "bank": "tinkof",
       "balance": "5445.56",
@@ -271,10 +181,10 @@
       "updatedAt": 1668946513949,
       "currency": "EUR",
       "_id": "X7NGmMJxR08YkApxRZRI"
-    },
-    {
+      },
+    "c0CcZqcaT5gu9yEPD39S": {
       "createdAt": 1668946513949,
-      "type": "ip",
+      "type": "IP",
       "account": "77040591",
       "bank": "vtb",
       "balance": "122573.83",
@@ -282,10 +192,10 @@
       "updatedAt": 1668946513949,
       "currency": "RUB",
       "_id": "c0CcZqcaT5gu9yEPD39S"
-    },
-    {
+      },
+    "xynpW1P6soTC8EEi18wq": {
       "createdAt": 1668946513949,
-      "type": "card",
+      "type": "CARD",
       "account": "38698969",
       "bank": "sber",
       "balance": "96.19",
@@ -293,5 +203,202 @@
       "updatedAt": 1668946513949,
       "currency": "USD",
       "_id": "xynpW1P6soTC8EEi18wq"
+      }
+   },
+  "funds": {
+    "sex6h7zfptyvd39uuvfc": {
+    "createdAt": 1669384884000,
+    "type": "incom",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 7500,
+    "balance": 7500,
+    "details": "eligendi ab dolor",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1669384884000,
+    "_id": "sex6h7zfptyvd39uuvfc"
+    },
+    "lh1zs25vwvkvp1p214lw": {
+    "createdAt": 1669471284000,
+    "type": "exspense",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "balance": 5000,
+    "amount": 2500,
+    "details": "perspiciatis laboriosam sit",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1669471284000,
+    "_id": "lh1zs25vwvkvp1p214lw"
+    },
+    "mk0jsr9lx59nbpxvcoz4": {
+    "createdAt": 1669557684000,
+    "type": "incom",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 12300,
+    "balance": 17300,
+    "details": "qui qui in",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1669557684000,
+    "_id": "mk0jsr9lx59nbpxvcoz4"
+    },
+    "guavokr2yl0wbn9bejs5": {
+    "createdAt": 1669644084000,
+    "type": "exspense",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 5300,
+    "balance": 12000,
+    "details": "hic occaecati necessitatibus",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1669644084000,
+    "_id": "guavokr2yl0wbn9bejs5"
+    },
+    "37zlk3vz5bknc53xz6sf": {
+    "createdAt": 1669705284000,
+    "type": "exspense",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 12000,
+    "balance": 0,
+    "details": "vel voluptas et",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1669705284000,
+    "_id": "37zlk3vz5bknc53xz6sf"
+    },
+    "5cU3Ja0OnGLMVAszGbeK": {
+    "createdAt": 1669711435000,
+    "type": "incom",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 2642.25,
+    "balance": 2642.25,
+    "details": "eligendi ab dolor",
+    "comments": [
+    "hl8oD6tZS02HedtH4BhJ",
+    "QzER6Nf5upCYl7Ljo1Al",
+    "z9AZAlFBNOcfA0A7ghKQ"
+    ],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1669711435000,
+    "_id": "5cU3Ja0OnGLMVAszGbeK"
+    },
+    "d20Taa76ygYx2OU1T0rX": {
+    "createdAt": 1669930985000,
+    "type": "exspense",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "balance": 8548.25,
+    "amount": 701.96,
+    "details": "perspiciatis laboriosam sit",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1669930985000,
+    "_id": "d20Taa76ygYx2OU1T0rX"
+    },
+    "YELgzP1wbHcl3erpAi44": {
+    "createdAt": 1669995785000,
+    "type": "incom",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 11256,
+    "balance": 19804.25,
+    "details": "qui qui in",
+    "comments": [
+    "K1YgWonYquJ9VmF6CYXs",
+    "K1YgWonYquJ9VmF6CYXs"
+    ],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1669995785000,
+    "_id": "YELgzP1wbHcl3erpAi44"
+    },
+    "3pjDBa3joPs5ajywH46t": {
+    "createdAt": 1670060585000,
+    "type": "exspense",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 5499.6,
+    "balance": 14304.65,
+    "details": "hic occaecati necessitatibus",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1670060585000,
+    "_id": "3pjDBa3joPs5ajywH46t"
+    },
+    "AD9NpKNdef66VMpm0Ygu": {
+    "createdAt": 1670157785000,
+    "type": "incom",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 15324.35,
+    "balance": 29629,
+    "details": "vel voluptas et",
+    "comments": [
+    "QkfEhqXywU50GArz2jSU",
+    "QkfEhqXywU50GArz2jSU"
+    ],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1670157785000,
+    "_id": "AD9NpKNdef66VMpm0Ygu"
+    },
+    "c5vmeVUXmW1TvYMAh02v": {
+    "createdAt": 1670271359000,
+    "type": "incom",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 965.93,
+    "balance": 30594.93,
+    "details": "ex pariatur rerum",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1670271359000,
+    "_id": "c5vmeVUXmW1TvYMAh02v"
+    },
+    "0TQ9tmGtkSeKVQwqKdEy": {
+    "createdAt": 1670314559000,
+    "type": "exspense",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 7711.8,
+    "balance": 22883.13,
+    "details": "suscipit voluptatem nam",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1670314559000,
+    "_id": "0TQ9tmGtkSeKVQwqKdEy"
+    },
+    "2dPNBTYaZBwy2Q69waOv": {
+    "createdAt": 1670357759000,
+    "type": "incom",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 22025,
+    "balance": 44908.13,
+    "details": "ipsum vel odio",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1670357759000,
+    "_id": "2dPNBTYaZBwy2Q69waOv"
+    },
+    "GtMwhGSg9JVoslKgtsEt": {
+    "createdAt": 1670411759000,
+    "type": "exspense",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 5800.13,
+    "balance": 39108,
+    "details": "dolorum nobis laborum",
+    "comments": [
+    "VuJJ3bQErjMhhmZgLJl5",
+    "J8acqLhfxmwIMy5ESPtu",
+    "zYBbY6prRDQhEQ2RmWae"
+    ],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1670411759000,
+    "_id": "GtMwhGSg9JVoslKgtsEt"
+    },
+    "FhgMNN1BCusH1BwOyV8q": {
+    "createdAt": 1670421684000,
+    "type": "incom",
+    "bill": "AoyW498t5RpizScgjNv5",
+    "amount": 3235.6,
+    "balance": 42343.6,
+    "details": "et aliquam consequatur",
+    "comments": [],
+    "userId": "SLVc10fXyHUUNoxvFWT5BKXfaez2",
+    "updatedAt": 1670421684000,
+    "_id": "FhgMNN1BCusH1BwOyV8q"
     }
-  ]
+  }
+}

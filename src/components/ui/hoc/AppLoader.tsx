@@ -12,8 +12,7 @@ const AppLoader:FC<PropsWithChildren> = ({ children }) => {
     const isLogged = useAppSelector(isLoggedInSelector())
     const dispatch = useAppDispatch()
     const {getAuthInfo} = useActions()
-
-    const { loading } = useAppSelector(state => state.auth)
+    const {loading} = useAppSelector(state => state.auth)
 
     useEffect(() => {
         if (!isLogged && authId) {
