@@ -20,13 +20,15 @@ export const Chart:FC<ChartProps> = React.memo(({ funds }) => {
     if (funds?.length > 2) {
       const data = funds.map(fund => ({ date: dayjs(fund.createdAt).format('D/M'), balance: fund.balance }))
       setData(data)
+    } else {
+      setData([])
     }
   }, [funds])
 
   return (
     <React.Fragment>
       <Title>Аналитика</Title>
-      {data.length > 2 ? (
+      {data.length > 4 ? (
       <ResponsiveContainer>
       <LineChart
         data={data}
@@ -56,7 +58,7 @@ export const Chart:FC<ChartProps> = React.memo(({ funds }) => {
       </LineChart>
     </ResponsiveContainer>
       ) : (
-        <h4>Длф получения аналитики нужно минимут три операции по счёту</h4>
+        <h4>Для получения аналитики нужно минимут пять операций по счёту</h4>
       )}
     </React.Fragment>
   )

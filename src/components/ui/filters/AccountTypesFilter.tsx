@@ -19,7 +19,11 @@ const MenuProps = {
     },
 };
 
-export const AccountTypesFilter:FC = React.memo(() => {
+interface AccountTypesFilterProps {
+    onFilterAccountTypes: (filtered: any[]) => void
+}
+
+export const AccountTypesFilter:FC<AccountTypesFilterProps> = React.memo(({onFilterAccountTypes}) => {
 
     const billTypes = Object.keys(billTypesMap)
 
@@ -27,7 +31,9 @@ export const AccountTypesFilter:FC = React.memo(() => {
 
     const changeHandler = (event: SelectChangeEvent<typeof values>) => {
         const {value} = event.target
-        setValues(typeof value === 'string' ? value.split(',') : value)
+        const newValues = typeof value === 'string' ? value.split(',') : value
+        setValues(newValues)
+        onFilterAccountTypes(newValues)
     };
 
     return (

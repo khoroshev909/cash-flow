@@ -33,7 +33,7 @@ const Layout:FC<LayoutProps> = React.memo(({children}) => {
 
     return (
         <Box sx={{
-            height: '100vh',
+            // height: '100vh',
             display: 'flex',
             flexDirection: 'column',
             color: 'primary.main'

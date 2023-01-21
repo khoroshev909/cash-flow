@@ -15,7 +15,7 @@ const initialState: AuthState = {
     loading: true,
     logged: false,
     error: null,
-    authId: null, // 'E3ZH4sl98Nc03iCySXpK'
+    authId: null,
     info: null
 }
 

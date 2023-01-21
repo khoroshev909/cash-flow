@@ -20,7 +20,6 @@ httpService.interceptors.request.use(
                 grant_type: 'refresh_token',
                 refresh_token: refreshToken
             })
-            console.log(data)
             storageService.setTokens({
                 idToken: data.id_token,
                 refreshToken: data.refresh_token,

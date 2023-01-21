@@ -1,6 +1,6 @@
-import { userService } from './../../services/user.service'
-import { IUser } from './../../types/models'
-import { createAsyncThunk } from '@reduxjs/toolkit'
+import {userService} from './../../services/user.service'
+import {IUser} from './../../types/models'
+import {createAsyncThunk} from '@reduxjs/toolkit'
 
 export const getAuthInfo = createAsyncThunk<IUser, string>( 'users/getAuthInfo',
     async (authId, thunkAPI) => {     

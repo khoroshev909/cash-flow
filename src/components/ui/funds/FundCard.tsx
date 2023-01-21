@@ -19,7 +19,7 @@ export const FundCard:FC<CardProps> = React.memo(({ fund }) => {
     if (!bill) return <h4>Loading...</h4>
 
     return (
-        <Card sx={{ mb: 2, maxWidth: '700px', '&:hover': { cursor: 'pointer' } }}>
+        <Card sx={{ mb: 2, '&:hover': { cursor: 'pointer' } }}>
             <CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box>
@@ -53,7 +53,7 @@ export const FundCard:FC<CardProps> = React.memo(({ fund }) => {
                             </Typography>
                             <BalanceInfo
                                 variant="h6"
-                                balance={fund.type === FUND_TYPES.INCOM ? fund.balance - fund.amount : fund.balance + fund.amount}
+                                balance={+(fund.type === FUND_TYPES.INCOM ? fund.balance - fund.amount : fund.balance + fund.amount).toFixed(2)}
                                 currency={bill.currency}
                                 iconSize={18} />
                         </Box>
@@ -64,7 +64,7 @@ export const FundCard:FC<CardProps> = React.memo(({ fund }) => {
                             </Typography>
                             <BalanceInfo
                                 variant="h6"
-                                balance={fund.balance}
+                                balance={+fund.balance.toFixed(2)}
                                 currency={bill.currency}
                                 iconSize={18} />
                         </Box>

@@ -8,6 +8,8 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import Chip from "@mui/material/Chip";
 import MenuItem from "@mui/material/MenuItem";
 import {Title} from "../../reusable/Title";
+import {toast} from "react-toastify";
+import onChange = toast.onChange;
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -21,15 +23,18 @@ const MenuProps = {
 };
 
 interface BanksFilterProps {
-    banks: BANK_TYPES[]
+    banks: BANK_TYPES[],
+    onFilterBanks: (filtered: string[]) => void
 }
-export const BanksFilter:FC<BanksFilterProps> = React.memo(({ banks }) => {
+export const BanksFilter:FC<BanksFilterProps> = React.memo(({ banks, onFilterBanks }) => {
 
     const [values, setValues] = useState<string[]>(banks);
 
     const changeHandler = (event: SelectChangeEvent<typeof values>) => {
         const {value} = event.target
-        setValues(typeof value === 'string' ? value.split(',') : value)
+        const newValues = typeof value === 'string' ? value.split(',') : value
+        setValues(newValues)
+        onFilterBanks(newValues)
     };
 
     return (

@@ -18,6 +18,8 @@ export const getAuthId = () => localStorage.getItem('localId')
 export const getAccessToken = () => localStorage.getItem('idToken')
 export const getRefreshToken = () => localStorage.getItem('refreshToken')
 export const getExpiresIn = () => localStorage.getItem('expiresIn')
+export const setCurrentBill = (billId: string) => localStorage.setItem('currentBill', billId)
+export const getCurrentBill = () => localStorage.getItem('currentBill')
 
 const storageService = {
     setTokens,
@@ -25,6 +27,8 @@ const storageService = {
     getAuthId,
     getAccessToken,
     getRefreshToken,
-    getExpiresIn
+    getExpiresIn,
+    setCurrentBill,
+    getCurrentBill
 }
 export default storageService

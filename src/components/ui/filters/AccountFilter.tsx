@@ -1,13 +1,13 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {AccountInfo, Title} from "../../index"
 import {IBill} from "../../../types/models";
 import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
 import Select, {SelectChangeEvent} from "@mui/material/Select";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Chip from "@mui/material/Chip";
 import MenuItem from "@mui/material/MenuItem";
+import {toast} from "react-toastify";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -21,15 +21,17 @@ const MenuProps = {
 };
 
 interface AccountFilterProps {
-    bills: IBill[]
+    bills: IBill[],
+    onFilterAccount: (filtered: string[]) => void
 }
-export const AccountFilter:FC<AccountFilterProps> = React.memo(({ bills }) => {
+export const AccountFilter:FC<AccountFilterProps> = React.memo(({ bills, onFilterAccount }) => {
 
     const [values, setValues] = useState<string[]>(bills.map(bill => bill._id));
-
     const changeHandler = (event: SelectChangeEvent<typeof values>) => {
         const {value} = event.target
-        setValues(typeof value === 'string' ? value.split(',') : value)
+        const newValues = typeof value === 'string' ? value.split(',') : value
+        setValues(newValues)
+        onFilterAccount(newValues)
     };
 
     return (

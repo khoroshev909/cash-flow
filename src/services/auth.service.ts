@@ -4,7 +4,7 @@ import {Dispatch} from "@reduxjs/toolkit";
 import {authActions} from "../store/auth/authSlice";
 import {userService} from "./user.service";
 
-const authConfig = axios.create({
+const authService = axios.create({
     baseURL: 'https://identitytoolkit.googleapis.com/v1',
     params: {
         key: 'AIzaSyAfeiVrkuqPjVGU4Y_7-D36SsapK0inC8Y'
@@ -31,7 +31,7 @@ export interface AuthResponse {
 
 export const login = ({ email, password }: LoginPayload) => async (dispatch: Dispatch) => {
     try {
-        const { data } = await authConfig.post<AuthResponse>('accounts:signInWithPassword', {
+        const { data } = await authService.post<AuthResponse>('accounts:signInWithPassword', {
             email,
             password,
             returnSecureToken: true
@@ -46,7 +46,7 @@ export const login = ({ email, password }: LoginPayload) => async (dispatch: Dis
 
 export const signUp = ({ email, password, username }: SignUpPayload) => async (dispatch: Dispatch) => {
     try {
-        const { data } = await authConfig.post<AuthResponse>('accounts:signUp', {
+        const { data } = await authService.post<AuthResponse>('accounts:signUp', {
             email,
             password,
             returnSecureToken: true
@@ -72,12 +72,4 @@ export const logout = () => (dispatch: Dispatch) => {
     removeTokens()
     dispatch(authActions.logOut())
 }
-
-const authService = {
-    get: axios.get,
-    post: axios.post,
-    put: axios.put,
-    delete: axios.delete
-}
-
 export default authService

@@ -7,8 +7,8 @@ import LoginPage from './components/pages/LoginPage';
 import FundListPage from './components/pages/FundListPage';
 import FundPage from './components/pages/FundPage';
 import SignUpPage from "./components/pages/SignUpPage";
-import AppLoader from "./components/ui/hoc/AppLoader";
 import GuestRoute from "./components/routes/GuestRoute";
+import AuthProvider from "./hooks/AuthProvider";
 
 const HomePage = React.lazy(() => import(
   /* webpackChunkName: "[Home]" */
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="app">
-        <AppLoader>
+        <AuthProvider>
             <Routes>
                 <Route
                     path='/'
@@ -34,7 +34,7 @@ function App() {
                 <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
             <ToastContainer />
-        </AppLoader>
+        </AuthProvider>
     </div>
   );
 }

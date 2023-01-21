@@ -2,7 +2,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import configFile from '../../config'
 import {IBill} from "../../types/models";
 import fetchFn from "./utils/fetchFn";
-import transformResponse from "./utils/transformResponse";
+import {BaseQueryArg, BaseQueryMeta, BaseQueryResult} from "@reduxjs/toolkit/dist/query/baseQueryTypes";
+import localStorageService from "../localStorage.service";
 
 export const billApi = createApi({
     reducerPath: 'billAPI',
@@ -15,7 +16,12 @@ export const billApi = createApi({
         return {
             fetchAllBills: build.query<IBill[], null>({
                 query: () => ({ url: '/bills' }),
-                transformResponse,
+                transformResponse: (response: BaseQueryResult<any>, meta: BaseQueryMeta<any>, args: BaseQueryArg<any>): IBill[] => {
+                    const authId = localStorageService.getAuthId()
+                    if (!authId) return []
+                    const transformed: IBill[] = Array.isArray(response) ? response : Object.keys(response).map(key => response[key])
+                    return transformed.filter(item => item.userId === authId)
+                },
                 providesTags: result => ['Bills']
             }),
             // createPost: build.mutation<IPost[], IPost>({
